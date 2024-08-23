@@ -23,7 +23,13 @@ To set up the project and install all required dependencies, follow these steps:
    pip install -r requirements.txt
 
 ### Command-Line Usage
-Here's the syntax for running the script:
+Here is the syntax for running the script. You need to specify the following:
+
+- **`src_folder`**: The path to the folder where all the images are located.
+- **`csv_file`**: The path where the script will save the output CSV file.
+- **`save_plot`**: The path where the script will save the output plot (image file).
+
+The script will automatically create the specified CSV file and plot image if they do not already exist.
 
    ```bash
    python zero_point.py --src_folder <path_to_source_folder> --csv_file <path_to_csv_file> --save_plot <path_to_plot_image>
