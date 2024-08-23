@@ -1,0 +1,7 @@
+watchdog
+astropy
+numpy
+astroquery
+sep
+pandas
+matplotlib
