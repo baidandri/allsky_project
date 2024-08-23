@@ -14,9 +14,11 @@ To set up the project and install all required dependencies, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YourUsername/YourRepository.git
-   cd YourRepository
+   git clone https://github.com/baidandri/allsky_project.git
+   cd allsky_project
 
+2. **Install Dependencies**:
+pip install -r requirements.txt
 
 ### Command-Line Usage
 Here's the syntax for running the script:
