@@ -50,7 +50,6 @@ For example, for a folder named `allsky_2024-08-23` with source images either in
    - You can access the paper here: [https://doi.org/10.1051/0004-6361/201935580](https://doi.org/10.1051/0004-6361/201935580).
    - This model with calculated parameters is implemented in the script in the function called `barghini_model` at `260`.
 
-
 2. **Gain Normalisation**:
    - The camera gain changes constantly throughout the night to accomodate the sky brightness.
    - The measured fluxes are normalised using previous data. The polynomial model used: flux= coeffs[0] * gain**2 + coeffs[1] * gain + coeffs[2] with coeffs=[0.59459824, 0.13382553, 0.27424068]. 
@@ -60,11 +59,11 @@ For example, for a folder named `allsky_2024-08-23` with source images either in
    - The flux is also normalised by dividing it with exposure time on line `223`.
 
 4. **Catalog Query**:
-   - The tycho-2 catalog is used and the width of the sky query is 78d as seen in function `catalog_query`. The magnitude limit is set as 5.
+   - The tycho-2 catalog is used and the width of the sky query is 78d as seen in function `catalog_query`. The magnitude limit is set as 5 at line `77`.
    - The location of the observatory with latitude, longitude and height above sea level is also defined in line from `69` to `71`.
 
 5. **Sleep Timers**:
-   - Two sleep timers are used: one at line 162 for 2 seconds to ensure the new file is completely written before processing, and another at line 690 for 5 seconds to reduce CPU usage by delaying each loop iteration.
+   - Two sleep timers are used: one at line 162 for 2 seconds to ensure the new file is completely written before processing, and another at line 690 for 3 seconds to reduce CPU usage by delaying each loop iteration.
 
 6. **Processing File**:
    - A log file named `processing.log` is defined on line `25` to track processing steps.
