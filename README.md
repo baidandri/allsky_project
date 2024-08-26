@@ -74,5 +74,5 @@ For example, for a folder named `allsky_2024-08-23` with source images either in
 
 8. **Masking Data**:
    - A circular mask is created to mask the low horizon and trees in the image.
-   - A radius of 450 is used in lines `457`,`616`, and `630`.
+   - A radius of 450 is used in lines `457`,`616`, and `629`.
 
