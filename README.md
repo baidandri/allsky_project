@@ -68,7 +68,11 @@ For example, for a folder named `allsky_2024-08-23` with source images either in
 6. **Processing File**:
    - A log file named `processing.log` is defined on line `25` to track processing steps.
 
-7. ***Stopping Real-Time Processing***
+7. **Stopping Real-Time Processing**:
    - To stop real-time processing, you can use a keyboard interrupt (Ctrl+C).
    - If you wish to disable the real-time file check, comment out lines `684` to `693`.
+
+8. **Masking Data**:
+   - A circular mask is created to mask the low horizon and trees in the image.
+   - A radius of 450 is used in lines `457`,`616`, and `630`.
 
