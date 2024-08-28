@@ -45,6 +45,13 @@ For example, for a folder named `allsky_2024-08-23` with source images either in
 
 ## Important Notes
 
+1. **Script Behavior on Start**:
+   - If there are existing files in the source folder when the script starts, it will process these files first. After processing all available files, it will switch to real-time mode to handle new incoming files.
+
+2. **Resume from Last Run**:
+   - Suppose the script is interrupted and restarted, it always checks the existing CSV file to determine which files have already been processed.
+   - For any previously processed files, the script skips the calculation steps and only plots the initial three plots (excluding the quadrant plot) before continuing with real-time processing.
+
 1. **Projection Model**:
    - The code utilizes the projection model described in the paper: *"Astrometric calibration for all-sky cameras revisited"* by D. Barghini, D. Gardiol, et al., published in *Astronomy & Astrophysics*, Vol. 626, A105 (2019).
    - You can access the paper here: [https://doi.org/10.1051/0004-6361/201935580](https://doi.org/10.1051/0004-6361/201935580).
