@@ -52,34 +52,34 @@ For example, for a folder named `allsky_2024-08-23` with source images either in
    - Suppose the script is interrupted and restarted, it always checks the existing CSV file to determine which files have already been processed.
    - For any previously processed files, the script skips the calculation steps and only plots the initial three plots (excluding the quadrant plot) before continuing with real-time processing.
 
-1. **Projection Model**:
+3. **Projection Model**:
    - The code utilizes the projection model described in the paper: *"Astrometric calibration for all-sky cameras revisited"* by D. Barghini, D. Gardiol, et al., published in *Astronomy & Astrophysics*, Vol. 626, A105 (2019).
    - You can access the paper here: [https://doi.org/10.1051/0004-6361/201935580](https://doi.org/10.1051/0004-6361/201935580).
    - This model with calculated parameters is implemented in the script in the function called `barghini_model` at `260`.
 
-2. **Gain Normalisation**:
+4. **Gain Normalisation**:
    - The camera gain changes constantly throughout the night to accomodate the sky brightness.
    - The measured fluxes are normalised using previous data. The polynomial model used: flux= coeffs[0] * gain**2 + coeffs[1] * gain + coeffs[2] with coeffs=[0.59459824, 0.13382553, 0.27424068]. 
    - This model is implemented in the script in the function called `detect_sources` from `209` to `213`.
 
-3. **Exposure Time Normalisation**:
+5. **Exposure Time Normalisation**:
    - The flux is also normalised by dividing it with exposure time on line `223`.
 
-4. **Catalog Query**:
+6. **Catalog Query**:
    - The tycho-2 catalog is used and the width of the sky query is 78d as seen in function `catalog_query`. The magnitude limit is set as 5 at line `77`.
    - The location of the observatory with latitude, longitude and height above sea level is also defined in line from `69` to `71`.
 
-5. **Sleep Timers**:
+7. **Sleep Timers**:
    - Two sleep timers are used: one at line 162 for 2 seconds to ensure the new file is completely written before processing, and another at line 690 for 3 seconds to reduce CPU usage by delaying each loop iteration.
 
-6. **Processing File**:
+8. **Processing File**:
    - A log file named `processing.log` is defined on line `25` to track processing steps.
 
-7. **Stopping Real-Time Processing**:
+9. **Stopping Real-Time Processing**:
    - To stop real-time processing, you can use a keyboard interrupt (Ctrl+C).
    - If you wish to disable the real-time file check, comment out lines `684` to `693`.
 
-8. **Masking Data**:
+10. **Masking Data**:
    - A circular mask is created to mask the low horizon and trees in the image.
    - A radius of 450 is used in lines `457`,`616`, and `629`.
 
